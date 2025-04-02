@@ -6,7 +6,7 @@ const Delete = () => {
     const handleDelete = async(e)=>{
         e.preventDefault()
         const id = e.target.id.value;
-        axios.delete(`http://localhost:9000/users/${id}`);
+        axios.delete(`https://fsd-backend-sem-vi-ds-a.onrender.com/users/${id}`);
         alert("success")
     }
   return (
