@@ -20,6 +20,10 @@ const writedata = async () => {
     await fs.writeFile('./data.json', JSON.stringify(users))
 }
 readdata();
+
+app.get('/',()=>{
+    res.send("Welcome to ")
+})
 app.get('/users', async (req, res) => {
     res.json(users);
 })
