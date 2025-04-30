@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { formatDate } from '../utils/formatdate';
 
 const SearchBook = () => {
   const [books, setBooks] = useState([]);
@@ -62,7 +63,7 @@ const SearchBook = () => {
                 <tr key={book._id} className="border-t hover:bg-gray-50">
                   <td className="py-3 px-4">{book.title}</td>
                   <td className="py-3 px-4">{book.author}</td>
-                  <td className="py-3 px-4">{book.date || 'N/A'}</td>
+                  <td className="py-3 px-4">{formatDate(book.date) || 'N/A'}</td>
                   <td className="py-3 px-4">
                     {book.image ? (
                       <img

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { formatDate } from '../utils/formatdate';
 
 const UpdateBook = () => {
   const [books, setBooks] = useState([]);
@@ -91,12 +92,13 @@ const UpdateBook = () => {
                   {editBookId === book._id ? (
                     <input
                       name="date"
+                      type='date'
                       value={editedData.date}
                       onChange={handleInputChange}
                       className="border rounded px-2 py-1 w-full"
                     />
                   ) : (
-                    book.date || 'N/A'
+                    formatDate(book.date) || 'N/A'
                   )}
                 </td>
                 <td className="py-3 px-4">

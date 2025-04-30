@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { formatDate } from '../utils/formatdate';
 
 const DeleteBook = () => {
   const [books, setBooks] = useState([]);
@@ -58,7 +59,7 @@ const DeleteBook = () => {
               <tr key={book._id} className="border-t hover:bg-gray-50">
                 <td className="py-3 px-4 font-semibold">{book.title}</td>
                 <td className="py-3 px-4">{book.author}</td>
-                <td className="py-3 px-4">{book.date || 'N/A'}</td>
+                <td className="py-3 px-4">{formatDate(book.date) || 'N/A'}</td>
                 <td className="py-3 px-4">
                   {book.image ? (
                     <img
