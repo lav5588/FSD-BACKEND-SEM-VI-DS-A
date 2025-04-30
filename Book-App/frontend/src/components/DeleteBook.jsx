@@ -8,7 +8,7 @@ const DeleteBook = () => {
   // Fetch all books
   const fetchBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:9000/books');
+      const response = await axios.get('https://fsd-backend-sem-vi-ds-a-1.onrender.com/books');
       setBooks(response.data);
     } catch (err) {
       console.error('❌ Error fetching books:', err);
@@ -22,7 +22,7 @@ const DeleteBook = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:9000/books/${id}`);
+      await axios.delete(`https://fsd-backend-sem-vi-ds-a-1.onrender.com/books/${id}`);
       alert('📚 Book Deleted Successfully!');
       // Remove deleted book from local state
       setBooks(prevBooks => prevBooks.filter(book => book._id !== id));

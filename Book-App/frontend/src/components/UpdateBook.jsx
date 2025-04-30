@@ -8,7 +8,7 @@ const UpdateBook = () => {
 
   const fetchBooks = async () => {
     try {
-      const res = await axios.get('http://localhost:9000/books');
+      const res = await axios.get('https://fsd-backend-sem-vi-ds-a-1.onrender.com/books');
       setBooks(res.data);
     } catch (err) {
       console.error('Error fetching books:', err);
@@ -35,7 +35,7 @@ const UpdateBook = () => {
 
   const handleSave = async (id) => {
     try {
-      await axios.put(`http://localhost:9000/books/${id}`, editedData);
+      await axios.put(`https://fsd-backend-sem-vi-ds-a-1.onrender.com/books/${id}`, editedData);
       alert('✅ Book updated successfully!');
       setEditBookId(null);
       fetchBooks(); // Re-fetch updated books

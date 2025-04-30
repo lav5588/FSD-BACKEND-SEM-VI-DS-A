@@ -8,7 +8,7 @@ const ViewBook = () => {
   const fetchBook = async () => {
     try {
       console.log("Fetching books...");
-      const response = await axios.get('http://localhost:9000/books');
+      const response = await axios.get('https://fsd-backend-sem-vi-ds-a-1.onrender.com/books');
       console.log("data:", response.data);
       setBooks(response.data);
     } catch (error) {
