@@ -11,6 +11,7 @@ const SearchBook = () => {
     try {
       const res = await axios.get('https://fsd-backend-sem-vi-ds-a-1.onrender.com/books');
       setBooks(res.data);
+      console.log('Books fetched:', res.data);
       setFilteredBooks(res.data); // initialize filtered list
     } catch (err) {
       console.error('Error fetching books:', err);

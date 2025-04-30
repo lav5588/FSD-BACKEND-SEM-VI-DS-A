@@ -20,7 +20,8 @@ const BookSchema = new mongoose.Schema({
   title: String,
   author: String,
   data: String,
-  image: String
+  image: String,
+  date: { type: Date, default: Date.now },
 });
 
 const Book = mongoose.model('MY_BOOK', BookSchema); // NOTE: Mongoose auto-pluralizes collection names
@@ -28,7 +29,7 @@ const Book = mongoose.model('MY_BOOK', BookSchema); // NOTE: Mongoose auto-plura
 // POST route to add a book
 app.post('/books', async (req, res) => {
   try {
-    const newBook = new Book(req.body); // ✅ fixed typo
+    const newBook = new Book(req.body); 
     await newBook.save();
     res.status(201).json({
       message: 'Book added successfully',
